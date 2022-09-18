@@ -21,9 +21,16 @@
         const divListContainerElement = document.getElementById('list');
 
         imageUrlArray.map((urlString) => {
-          const imageElement = document.createElement('img');
-          imageElement.src = urlString;
-          divListContainerElement.appendChild(imageElement);
+          console.log(urlString.split('.')[urlString.split('.').length - 1]);
+          if (
+            urlString.split('.')[urlString.split('.').length - 1] === 'png' ||
+            urlString.split('.')[urlString.split('.').length - 1] === 'jpg' ||
+            urlString.split('.')[urlString.split('.').length - 1] === 'jpeg'
+          ) {
+            const imageElement = document.createElement('img');
+            imageElement.src = urlString;
+            divListContainerElement.appendChild(imageElement);
+          }
         });
       };
       // document

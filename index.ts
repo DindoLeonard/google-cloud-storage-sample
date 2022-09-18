@@ -191,6 +191,8 @@ app.post('/upload', async (req: Request, res: Response, next: NextFunction) => {
         success: true,
         data: imageUrl,
       });
+    } else {
+      throw new Error('No files selected');
     }
 
     return res.status(200).json({ success: true });
