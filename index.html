@@ -19,6 +19,11 @@
         const imageElementArray = [];
 
         const divListContainerElement = document.getElementById('list');
+        divListContainerElement.style.display = 'flex';
+        divListContainerElement.style.justifyContent = 'center';
+        divListContainerElement.style.alignItems = 'center';
+        divListContainerElement.style.flexDirection = 'column';
+        divListContainerElement.style.padding = '5px 200px';
 
         imageUrlArray.map((urlString) => {
           console.log(urlString.split('.')[urlString.split('.').length - 1]);
@@ -29,6 +34,9 @@
           ) {
             const imageElement = document.createElement('img');
             imageElement.src = urlString;
+            imageElement.style.width = '100%';
+            imageElement.style.height = '100%';
+            imageElement.style.margin = '10px 0px';
             divListContainerElement.appendChild(imageElement);
           }
         });
